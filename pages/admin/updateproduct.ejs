@@ -1,0 +1,42 @@
+<%- include('header') %>
+
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">                    
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- basic form -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Update Listing Car Form</h5>
+                                <div class="card-body">
+                                    <form action="/editProduct" method="post" id="basicform" data-parsley-validate="">
+                                        <input type="text" name="editid" hidden value="<%= Product.id %>">
+                                        <div class="form-group">
+                                            <label for="inputUserName">Enter car name</label>
+                                            <input id="inputUserName" type="text" name="carName" data-parsley-trigger="change" required value="<%= Product.carName %>"  placeholder="Enter Product Name" autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail">Enter manufacturing year</label>
+                                            <input id="inputEmail" type="number" name="year" data-parsley-trigger="change" required value="<%= Product.year %>"  placeholder="Enter Price" autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail">Enter price</label>
+                                            <input id="inputEmail" type="number" name="price" data-parsley-trigger="change" required value="<%= Product.price %>" placeholder="Enter Price" autocomplete="off" class="form-control">
+                                        </div>
+                                      
+                                        <div class="row">
+                                            <div class="col-sm-6 pl-0">
+                                                <p class="text-right">
+                                                    <button type="submit" name="submit" value="edit data" class="btn btn-space btn-primary">Submit</button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<%- include('footer') %>
